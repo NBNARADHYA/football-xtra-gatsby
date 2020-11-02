@@ -13,7 +13,7 @@ module.exports = {
       options: {
         typeName: "footballXtraServer",
         fieldName: "footballXtraServer",
-        url: "http://localhost:5000/graphql",
+        url: "https://football-xtra.herokuapp.com/graphql",
       },
     },
   ],
