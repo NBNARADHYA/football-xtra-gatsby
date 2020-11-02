@@ -3,7 +3,7 @@ const { leagues } = require("./static/leagues")
 const { seasons } = require("./static/seasons")
 
 exports.createPages = ({ actions }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
   leagues.forEach(league => {
     seasons.forEach(season => {
       createPage({
@@ -15,5 +15,12 @@ exports.createPages = ({ actions }) => {
         },
       })
     })
+  })
+
+  createRedirect({
+    fromPath: "/404",
+    isPermanent: true,
+    redirectInBrowser: true,
+    toPath: "/",
   })
 }

@@ -6,7 +6,9 @@ import Transition from "../components/transition"
 const Layout = ({ children, location }) => {
   return (
     <SeasonProvider>
-      <Navbar leagueShortHand={location.pathname.split("/")[2]} />
+      {location.pathname !== "/" && (
+        <Navbar leagueShortHand={location.pathname.split("/")[2]} />
+      )}
       <Transition location={location}>{children}</Transition>
     </SeasonProvider>
   )

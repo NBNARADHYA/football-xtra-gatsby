@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "football-xtra",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "Get Football stats from 93/94 season",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby clean && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
@@ -28,9 +28,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/NBNARADHYA/football-xtra-gatsby"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/NBNARADHYA/football-xtra-gatsby/issues"
   }
 }
