@@ -23,6 +23,4 @@ const SeasonProvider = ({ children }) => {
   )
 }
 
-export default SeasonContext
-
-export { SeasonProvider }
+export { SeasonContext as default, SeasonProvider }

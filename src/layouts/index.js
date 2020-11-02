@@ -1,12 +1,15 @@
 import React from "react"
 import { SeasonProvider } from "../context/SeasonContext"
 import Navbar from "../components/Navbar"
+import Transition from "../components/transition"
 
-export default ({ children, location: { pathname } }) => {
+const Layout = ({ children, location }) => {
   return (
     <SeasonProvider>
-      <Navbar leagueShortHand={pathname.split("/")[2]} />
-      {children}
+      <Navbar leagueShortHand={location.pathname.split("/")[2]} />
+      <Transition location={location}>{children}</Transition>
     </SeasonProvider>
   )
 }
+
+export default Layout
