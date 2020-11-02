@@ -44,7 +44,7 @@ const League = ({
   pageContext: { div, season },
   location,
 }) => {
-  console.log(location)
+  // console.log(location)
   const [view, setView] = useState("table")
   const league = leagues.find(league => league.div === div)
   const table = useMemo(() => {
@@ -58,7 +58,7 @@ const League = ({
         changeLeagueView={setView}
         view={view}
         season={season}
-        league={league.shortHand}
+        league={league}
       />
       {view === "table" && (
         <Table

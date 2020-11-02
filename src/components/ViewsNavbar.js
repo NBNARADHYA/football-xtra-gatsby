@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useContext } from "react"
+import { navigate } from "gatsby"
 import {
   Tabs,
   Tab,
@@ -9,9 +10,11 @@ import {
 } from "@material-ui/core"
 import { views } from "../../static/views"
 import { seasons } from "../../static/seasons"
-import { navigate } from "gatsby"
+import SeasonContext from "../context/SeasonContext"
 
 const ViewsNavbar = props => {
+  const { changeSeason } = useContext(SeasonContext)
+
   const viewsTabs = views.map(view => {
     return <Tab value={view.key} key={view.key} label={view.name} />
   })
@@ -33,9 +36,10 @@ const ViewsNavbar = props => {
         <InputLabel>Season</InputLabel>
         <Select
           value={props.season}
-          onChange={event =>
-            navigate(`/leagues/${props.league}/${event.target.value}`)
-          }
+          onChange={event => {
+            changeSeason(event.target.value, props.league.id)
+            navigate(`/leagues/${props.league.shortHand}/${event.target.value}`)
+          }}
         >
           {seasonsSelectItems}
         </Select>
