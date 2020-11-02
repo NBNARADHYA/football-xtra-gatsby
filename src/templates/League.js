@@ -5,7 +5,6 @@ import TopScorers from "../components/TopScorers"
 import Matches from "../components/Matches/"
 import ViewsNavbar from "../components/ViewsNavbar"
 import { leagues } from "../../static/leagues"
-import Navbar from "../components/Navbar"
 import getTableFromMatches from "../utils/getTableFromMatches"
 
 export const query = graphql`
@@ -42,9 +41,7 @@ const League = ({
     footballXtraServer: { matches },
   },
   pageContext: { div, season },
-  location,
 }) => {
-  // console.log(location)
   const [view, setView] = useState("table")
   const league = leagues.find(league => league.div === div)
   const table = useMemo(() => {
@@ -53,7 +50,6 @@ const League = ({
 
   return (
     <div>
-      <Navbar leagueId={league.id} />
       <ViewsNavbar
         changeLeagueView={setView}
         view={view}

@@ -4,9 +4,11 @@ import { Link } from "gatsby"
 import { leagues } from "../../static/leagues"
 import SeasonContext from "../context/SeasonContext"
 
-const Navbar = ({ leagueId }) => {
+const Navbar = ({ leagueShortHand }) => {
   const { season } = useContext(SeasonContext)
-
+  const leagueId = leagues.findIndex(
+    league => league.shortHand === leagueShortHand
+  )
   const leagueTabs = useMemo(() => {
     return leagues.map((league, leagueIdx) => {
       return (
