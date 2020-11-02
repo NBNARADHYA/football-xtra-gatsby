@@ -6,5 +6,14 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "footballXtraServer",
+        fieldName: "footballXtraServer",
+        url: "http://localhost:5000/graphql",
+      },
+    },
+  ],
 }
